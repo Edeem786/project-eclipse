@@ -1,0 +1,8 @@
+body {
+    background-image: url('images/lunar.jpg');
+    background-size: cover; /* Scale the image to cover the entire body */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-attachment: fixed; /* Fix the background while scrolling */
+    background-position: center center;
+    overflow-y: scroll;
+}

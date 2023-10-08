@@ -1,0 +1,62 @@
+.row {
+    justify-content: center;
+}
+
+p {
+    color: white;
+    text-align: center;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.cards {
+    margin-top: 50px;
+}
+.card {
+    width: 400px; /* Adjust the width as needed */
+    height: 530px; /* Adjust the height as needed */
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-img-top {
+    display: block;
+    max-width: 80%;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.display-5 {
+    text-align: center;
+    color: white;
+}
+.centertext {
+    color: white;
+    text-align: center;
+    max-width: 50%;
+    word-wrap: normal;
+    margin-left: 25%;
+}
+
+.description {
+    padding: 30px;
+    margin-bottom: 100px;
+}
+
+.image-container {
+    margin-top: 100px;
+    width: 200px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    margin: 10px; /* Add margin to create spacing between images */
+    border: 1px solid #ccc; /* Add a border for separation */
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);;
+}
+
+.image-container img {
+    width: 100%; /* Ensure the image takes the full width of its container */
+    height: 100%; /* Ensure the image takes the full height of its container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}

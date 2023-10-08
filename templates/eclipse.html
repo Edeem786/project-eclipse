@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Eclipse Simulator Lite
+{% endblock %}
+
+{% block link %}
+    <link href="/static/styles.css" rel="stylesheet">
+    <link href="/static/eclipse.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="position-absolute top-0 end-0 m-3" style="z-index: 999;">
+        <button type="button" class="btn btn-danger" id="resetButton">Reset</button>
+    </div>
+    <div class="position-absolute top-0 end-0 m-3" style="z-index: 999;">
+        <div class="tooltip-content" id="explanationContainer">
+            <p id="explanationText" class="h3">
+                During a total eclipse, the moon completely covers the sun, blocking its bright yellow color. This causes the sun to appear white because only the outer atmosphere, called the corona, is visible. Keep in mind the type of eclipse you'll see varies by what place you view it from!
+            </p>
+        </div>
+    </div>
+    <div class="sun"></div>
+    <div class="moon moon-draggable" id="moon"></div>
+    <script src="static/scripts/script.js"></script>
+    <div class="slider-container">
+        <div class="row">
+            <div class="col">
+                <h1 class="h2" id="eclipsePhase"></h1>
+            </div>
+            <div class="col">
+                <h2 id="distanceDisplay">Distance from Moon to Earth: </h2>
+            </div>
+        </div>
+        <input type="range" min="10" max="100" value="10" class="moon-slider" id="moonSizeSlider" data-bs-toggle="tooltip" title="Adjust Moon Size">
+    </div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Penumbral Lunar Eclipse
+{% endblock %}
+
+{% block link %}
+    <link href="/static/styles.css" rel="stylesheet">
+    <link href="/static/edu.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('static/images/penumbral3.jpg');
+            background-size: cover; /* Scale the image to cover the entire body */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-attachment: fixed; /* Fix the background while scrolling */
+            background-position: center center;
+            overflow-y: scroll;
+        }
+        .centertext {
+            background-color: rgba(0, 0, 0, 0.5);
+            color : white;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="animate-text">Penumbral Lunar Eclipse</h1>
+</div>
+<div class="h3 centertext description">
+    <div class="row">
+        <div class="col">
+            A penumbral lunar eclipse is a subtle celestial event where the Moon passes through the Earth's penumbral shadow, resulting in a faint shading of the lunar surface.
+        </div>
+        </div>
+        <div class="col">
+            Unlike partial or total lunar eclipses, a penumbral eclipse is more challenging to observe since the shading is subtle. Nevertheless, it is an intriguing astronomical event that occurs when the Earth, Moon, and Sun align in a specific way.
+        </div>
+    </div>
+</div>
+
+{% if image_urls %}
+<div class="centertext">
+    <h1 class="display-5">Penumbral Lunar Eclipse Images</h1>
+    <p>
+        Via the NASA image Library
+    </p>
+</div>
+
+    <!-- Display images -->
+    <div class="image-gallery">
+        <div class="row">
+            {% for image_url in image_urls %}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="card bg-dark mb-4">
+                    <img src="{{ image_url }}" class="card-img-top" alt="Eclipse Image">
+                    <div class="card-body">
+                        <!-- Add any additional content or captions here -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

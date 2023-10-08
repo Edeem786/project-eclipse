@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Hybrid Solar Eclipse
+{% endblock %}
+
+{% block link %}
+    <link href="/static/styles.css" rel="stylesheet">
+    <link href="/static/edu.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('static/images/Hybrid.jpg');
+            background-size: cover; /* Scale the image to cover the entire body */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-attachment: fixed; /* Fix the background while scrolling */
+            background-position: center center;
+            overflow-y: scroll;
+        }
+        .centertext {
+            background-color: rgba(0, 0, 0, 0.5);
+            color : white;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="animate-text">Hybrid Solar Eclipse</h1>
+</div>
+<div class="h3 centertext description">
+    <div class="row">
+        <div class="col">
+            A hybrid solar eclipse is a captivating celestial event that transitions between a total solar eclipse and an annular solar eclipse depending on the observer's location.
+        </div>
+        <div class="col">
+            Observers at certain locations along the eclipse path may witness a total eclipse, while others may see an annular eclipse. This transition from total to annular or vice versa makes hybrid eclipses a fascinating and unique phenomenon in the world of astronomy.
+        </div>
+    </div>
+</div>
+
+{% if image_urls %}
+<div class="centertext">
+    <h1 class="display-5">Hybrid Solar Eclipse Images</h1>
+    <p>
+        Via the NASA image Library
+    </p>
+</div>
+
+    <!-- Display images -->
+    <div class="image-gallery">
+        <div class="row">
+            {% for image_url in image_urls %}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="card bg-dark mb-4">
+                    <img src="{{ image_url }}" class="card-img-top" alt="Eclipse Image">
+                    <div class="card-body">
+                        <!-- Add any additional content or captions here -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

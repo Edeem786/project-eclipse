@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    All about Eclipses
+{% endblock %}
+
+{% block link %}
+    <link href="/static/styles.css" rel="stylesheet">
+    <link href="/static/bgimage2.css" rel="stylesheet">
+    <link href="/static/edu.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script> <!-- Library for interactive diagrams-->
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="animate-text">All About Eclipses</h1>
+</div>
+<div class="h3 centertext">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Eclipses are captivating celestial events that occur when the Sun, Moon, and Earth align in precise arrangements, casting awe-inspiring shadows and producing breathtaking cosmic phenomena. These celestial occurrences have fascinated humanity for centuries, giving rise to myths, legends, and scientific discoveries.</p>
+
+            <p>There are two primary types of eclipses: solar eclipses and lunar eclipses. Solar eclipses transpire when the Moon temporarily obscures the Sun, plunging parts of the Earth into eerie darkness. On the other hand, lunar eclipses manifest when the Earth's shadow falls upon the Moon, transforming it into a captivating crimson hue.</p>
+
+            <p>Within these main categories lie various subtypes, each with its unique characteristics, such as total solar eclipses, partial lunar eclipses, and more. These cosmic phenomena have left a profound impact on cultures, societies, and scientific exploration throughout history.</p>
+
+            <p>In this Eclipsepedia, we invite you to embark on a journey through the mechanics of eclipses, the different eclipse types, and their profound significance in both science and culture. Join us as we demystify these captivating celestial events and explore their enchanting mysteries.</p>
+        </div>
+    </div>
+</div>
+<div class="cards">
+    <div class="row">
+        <!-- Total Solar Eclipse Card -->
+        <div class="col-md-4">
+            <a href="/totalsolareclipse" class="text-decoration-none">
+                <div class="card bg-dark text-light mb-3">
+                    <img src="static/images/total.jpg" class="card-img-top img-fluid" alt="Total Solar Eclipse Image">
+                    <div class="card-body">
+                        <h5 class="card-title display-5">Total Solar Eclipse</h5>
+                        <p class="card-text">Learn about total solar eclipses and their significance.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Partial Solar Eclipse Card -->
+        <div class="col-md-4">
+            <a href="/partialsolareclipse" class="text-decoration-none">
+                <div class="card bg-dark text-light mb-3">
+                    <img src="static/images/partial.jpg" class="card-img-top img-fluid" alt="Partial Solar Eclipse Image">
+                    <div class="card-body">
+                        <h5 class="card-title display-5">Partial Solar Eclipse</h5>
+                        <p class="card-text">Learn about partial solar eclipses and their significance.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Annular Solar Eclipse Card -->
+        <div class="col-md-4">
+            <a href="/annularsolareclipse" class="text-decoration-none">
+                <div class="card bg-dark text-light mb-3">
+                    <img src="static/images/annular.jpg" class="card-img-top img-fluid" alt="Annular Solar Eclipse Image">
+                    <div class="card-body">
+                        <h5 class="card-title display-5">Annular Solar Eclipse</h5>
+                        <p class="card-text">Learn about annular solar eclipses and their significance.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Hybrid Solar Eclipse Card -->
+        <div class="col-md-4">
+            <a href="/hybridsolareclipse" class="text-decoration-none">
+                <div class="card bg-dark text-light mb-3">
+                    <img src="static/images/hybrid.jpg" class="card-img-top img-fluid" alt="Hybrid Solar Eclipse Image">
+                    <div class="card-body">
+                        <h5 class="card-title display-5">Hybrid Solar Eclipse</h5>
+                        <p class="card-text">Learn about hybrid solar eclipses and their significance.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class = "row">
+        <!-- Total Lunar Eclipse Card -->
+        <div class="col-md-4">
+            <a href="/totallunareclipse" class="text-decoration-none">
+                <div class="card bg-dark text-light mb-3">
+                    <img src="static/images/lunar.jpg" class="card-img-top img-fluid" alt="Total Lunar Eclipse Image">
+                    <div class="card-body">
+                        <h5 class="card-title display-5">Total Lunar Eclipse</h5>
+                        <p class="card-text">Learn about total lunar eclipses and their significance.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Partial Lunar Eclipse Card -->
+        <div class="col-md-4">
+            <a href="/partiallunareclipse" class="text-decoration-none">
+                <div class="card bg-dark text-light mb-3">
+                    <img src="static/images/lunarpartial.jpg" class="card-img-top img-fluid" alt="Partial Lunar Eclipse Image">
+                    <div class="card-body">
+                        <h5 class="card-title display-5">Partial Lunar Eclipse</h5>
+                        <p class="card-text">Learn about partial lunar eclipses and their significance.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Penumbral Lunar Eclipse Card -->
+        <div class="col-md-4">
+            <a href="/penumbrallunareclipse" class="text-decoration-none">
+                <div class="card bg-dark text-light mb-3">
+                    <img src="static/images/penumbral.jpeg" class="card-img-top img-fluid" alt="Penumbral Lunar Eclipse Image">
+                    <div class="card-body">
+                        <h5 class="card-title display-5">Penumbral Lunar Eclipse</h5>
+                        <p class="card-text">Learn about penumbral lunar eclipses and their significance.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Add more eclipse cards here as needed -->
+    </div>
+</div>
+
+{% endblock %}

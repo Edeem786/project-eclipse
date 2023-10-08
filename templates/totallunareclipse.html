@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Total Lunar Eclipse
+{% endblock %}
+
+{% block link %}
+    <link href="/static/styles.css" rel="stylesheet">
+    <link href="/static/edu.css" rel="stylesheet">
+    <link href="/static/diagram.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('static/images/lunar.jpg');
+            background-size: cover; /* Scale the image to cover the entire body */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-attachment: fixed; /* Fix the background while scrolling */
+            background-position: center center;
+            overflow-y: scroll;
+        }
+        .centertext {
+            background-color: rgba(0, 0, 0, 0.5);
+            color : white;
+        }
+
+        .description {
+            margin-top: 50px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="animate-text">Total Lunar Eclipse</h1>
+</div>
+<canvas id="eclipseDiagram" width="800" height="200" willReadFrequently="true"></canvas>
+<div id="tooltip">
+    <div id="tooltip-text" class="display-6"></div>
+</div>
+<br>
+<script src="static/scripts/lunar.js"></script>
+<div class="h3 centertext description">
+    <div class="row">
+        <div class="col">
+            A total lunar eclipse is a mesmerizing celestial event that occurs when the Earth's shadow completely covers the Moon, giving it a deep reddish or copper hue.
+        </div>
+        <div class="col">
+            This phenomenon occurs during a full moon when the Earth is positioned directly between the Sun and the Moon. The Earth's atmosphere scatters shorter wavelengths of light, allowing longer wavelengths (red and orange) to reach the Moon, creating the captivating lunar eclipse.
+        </div>
+        </div>
+    </div>
+</div>
+
+{% if image_urls %}
+<div class="centertext">
+    <h1 class="display-5">Total Lunar Eclipse Images</h1>
+    <p>
+        Via the NASA image Library
+    </p>
+</div>
+
+    <!-- Display images -->
+    <div class="image-gallery">
+        <div class="row">
+            {% for image_url in image_urls %}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="card bg-dark mb-4">
+                    <img src="{{ image_url }}" class="card-img-top" alt="Eclipse Image">
+                    <div class="card-body">
+                        <!-- Add any additional content or captions here -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

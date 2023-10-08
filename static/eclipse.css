@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('images/sky.jpg');
+    background-size: cover; /* Scale the image to cover the entire body */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-attachment: fixed; /* Fix the background while scrolling */
+    background-position: center center;
+}
+
+.sun {
+    width: 35%; /* Relative to the window's width */
+    padding-bottom: 35%; /* Maintain aspect ratio for a circular sun */
+    background-color: #ffcc00;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.sun::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 204, 0, 0.5); /* Adjust the color and opacity for the glow */
+    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place it behind the sun */
+    animation: glow 3s ease-in-out infinite; /* Add a glow animation */
+}
+.sun.total-eclipse,
+.sun.total-eclipse::before {
+    background-color: white; /* Change both sun and glow color to white during a total eclipse */
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px 10px rgba(255, 204, 0, 0.7); /* Adjust the shadow size and opacity for the glow */
+    }
+    50% {
+        box-shadow: 0 0 40px 20px rgba(255, 204, 0, 0.5); /* Adjust the shadow size and opacity for the glow */
+    }
+    100% {
+        box-shadow: 0 0 20px 10px rgba(255, 204, 0, 0.7); /* Adjust the shadow size and opacity for the glow */
+    }
+}
+.sun.total-eclipse::before {
+    animation: total-eclipse-glow 3s ease-in-out infinite;
+}
+
+@keyframes total-eclipse-glow {
+    0% {
+        box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7); /* Adjust the shadow size and opacity for the white glow */
+    }
+    50% {
+        box-shadow: 0 0 40px 20px rgba(255, 255, 255, 0.5); /* Adjust the shadow size and opacity for the white glow */
+    }
+    100% {
+        box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7); /* Adjust the shadow size and opacity for the white glow */
+    }
+}
+
+.moon {
+    width: 34.65%; /* Relative to the window's width */
+    padding-bottom: 34.65%; /* Maintain aspect ratio for a circular moon */
+    background-color: #2a2a2a;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    cursor: move;
+}
+
+.moon-slider {
+    width: 40%;
+    position: absolute;
+    bottom: 10px; /* Adjust the bottom position */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.slider-container {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 30px; /* Adjust the bottom position */
+    z-index: 3;
+}
+
+#distanceDisplay {
+    color: white; /* Set the color of the text */
+    font-size: 20px; /* Adjust the font size as needed */
+    margin-top: 10px; /* Adjust the top margin as needed */
+    margin-bottom: 40px;
+}
+#eclipsePhase {
+    color: white;
+    z-index: 5;
+}
+
+#explanationContainer {
+    position: fixed;
+    color: white;
+    top: 100px;
+    right: 40px;
+    display: none;
+    opacity: 0; /* Initially hidden and fully transparent */
+    transition: opacity 0.5s ease; /* Apply a smooth transition on opacity */
+    text-align: right;
+}
+
+#explanationText {
+    max-width: 300px;
+    font-size: 25;
+    word-wrap: normalpx;
+}
+
+@media screen and (min-width: 481px) {
+    #explanationText {
+        max-width: 300px;
+        font-size: 25px; 
+        word-wrap: normal;
+    }
+}
+
+/* Media query for screens with a maximum width of 480px */
+@media screen and (max-width: 480px) {
+    #explanationText {
+        max-width: 100px;
+        font-size: 13px; 
+        word-wrap: normal;
+    }
+}

@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Question around eclipses
+{% endblock %}
+
+{% block link %}
+    <link href="/static/styles.css" rel="stylesheet">
+    <link href="/static/bgimage.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .row {
+            justify-content: center;
+            margin-bottom: 100px;
+        }
+        .question {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btn {
+            background-color: rgba(0, 0, 30);
+            color: white;
+        }
+        .cardimg {
+            max-width: 80%;
+            display: block;
+            margin: 0 auto;
+        }
+        .card-body {
+            background-color: navy;
+            color: aliceblue;
+        }
+        
+    </style>
+{% endblock %}
+
+{% block body %}
+<div>
+    <div class="container">
+        <h1 class="animate-text">Questions around eclipses</h1>
+    </div>
+    <!-- Question 1 -->
+    <div class="row">
+        <div class="col">
+
+            <div class="question">
+                <a class="btn btn-link" data-toggle="collapse" href="#answer1" role="button" aria-expanded="false" aria-controls="answer1">
+                    How do eclipses occur?
+                </a>
+                <div class="collapse" id="answer1">
+                    <div class="card card-body">
+                        <img src="static/images/solar-eclipse-diagram.webp" alt="Solar Eclipse Diagram" class="cardimg">
+                        <p>
+                            Eclipses occur when the Sun, Moon, and Earth align in a specific way, causing one celestial body to partially or completely block the light from another. There are two main types of eclipses: solar eclipses and lunar eclipses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+        <!-- Question 2 -->
+            <div class="question">
+                <a class="btn btn-link" data-toggle="collapse" href="#answer2" role="button" aria-expanded="false" aria-controls="answer2">
+                    Why do only some people on Earth see an eclipse at a given time?
+                </a>
+                <div class="collapse" id="answer2">
+                    <div class="card card-body">
+                        <p>Eclipses are visible only to observers within a specific region on Earth where the alignment of the Sun, Moon, and Earth allows for the eclipse to be seen. The rest of the Earth sees a regular day or night. The path of totality (for solar eclipses) or the visibility of a lunar eclipse depends on the geometry of the eclipse and the observer's location.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+
+            <div class="question">
+                <a class="btn btn-link" data-toggle="collapse" href="#answer3" role="button" aria-expanded="false" aria-controls="answer1">
+                    How often do eclipses occur?
+                </a>
+                <div class="collapse" id="answer3">
+                    <div class="card card-body">
+                        <p>
+                            Eclipses occur relatively frequently but not always in the same place. Solar eclipses occur on average about once every 18 months somewhere on Earth. Lunar eclipses are more common and can be seen from any location on Earth where the Moon is above the horizon during the eclipse.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="question">
+                <a class="btn btn-link" data-toggle="collapse" href="#answer4" role="button" aria-expanded="false" aria-controls="answer2">
+                    How do scientists know when and where eclipses will occur?
+                </a>
+                <div class="collapse" id="answer4">
+                    <div class="card card-body">
+                        <img src="static/images/saros.jpeg" alt="Solar Eclipse Diagram" class="cardimg">
+                        <p>
+                            Scientists use astronomical calculations and models to predict the timing and locations of eclipses. These calculations take into account the orbits of the Moon and Earth and use precise mathematical formulas to predict eclipse events. The most famous such calculation is the Saros cycle, which predicts when similar eclipses will repeat approximately every 18 years and 11 days.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="question">
+                <a class="btn btn-link" data-toggle="collapse" href="#answer5" role="button" aria-expanded="false" aria-controls="answer1">
+                    What is an eclipse season and why do they occur approximately every six months (or twice a year)?
+                </a>
+                <div class="collapse" id="answer5">
+                    <div class="card card-body">
+                        <p>
+                            An eclipse season occurs approximately every six months, and it consists of a period during which eclipses are more likely to happen. This is because the Moon's orbit is tilted with respect to Earth's orbit around the Sun. There are two points in the Moon's orbit where it crosses the plane of Earth's orbit, called the nodes. Eclipses can only occur when the Sun, Moon, and Earth are near these nodes.
+                        </p>
+                        <br>
+                        <p>
+                            Eclipse seasons occur when the Moon is near these nodes, increasing the likelihood of a solar or lunar eclipse happening. There are usually two eclipse seasons each year, separated by about six months.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Enable Bootstrap collapse and toggle animation
+    $(document).ready(function(){
+        $(".collapse").on('show.bs.collapse', function(){
+            $(this).prev(".btn-link").addClass("active");
+        }).on('hide.bs.collapse', function(){
+            $(this).prev(".btn-link").removeClass("active");
+        });
+    });
+</script>
+</div>
+{% endblock %}

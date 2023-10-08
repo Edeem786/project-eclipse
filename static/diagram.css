@@ -1,0 +1,20 @@
+#eclipseDiagram {
+    display: block;
+    margin: 0 auto;
+}
+#tooltip {
+    position: absolute;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    z-index: 100; /* Ensure the tooltip is above other elements */
+    display: block; /* Initially hide the tooltip */
+    opacity: 0; /* Start with opacity set to 0 */
+    transition: opacity 0.3s ease-in-out; /* Add a transition effect for opacity */
+}
+
+#tooltip-text {
+    text-align: center;
+    font-size: 30px;
+}

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Project Eclipse
+{% endblock %}
+
+{% block link %}
+    <link href="/static/styles.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/static/scripts/quiz.js"></script>
+    <style>
+        body {
+            background-image: url('static/images/space.jpg');
+            background-size: cover; /* Scale the image to cover the entire body */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-attachment: fixed; /* Fix the background while scrolling */
+            background-position: center center;
+            overflow-y: scroll;
+        }
+        .questions {
+            justify-content: center;
+            margin: 0 auto;
+            width: 60%;
+        }
+
+        .question {
+            display: block;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        .display-5 {
+            color: white;
+        }
+        .bottom {
+            justify-content: center;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            margin: 60px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="animate-text">Eclipse Quiz!</h1>
+    </div>
+    <div class="questions">
+
+    </div>
+    <div class="bottom">
+        <p class="display-5" id="score"></p>
+        <button class="btn btn-warning" id="submit-button">Check Answers</button>
+    </div>
+{% endblock %}
